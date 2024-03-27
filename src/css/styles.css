@@ -9,10 +9,11 @@
 @import url('./header.css');
 
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter, Avenir, Helvetica, Arial, Montserrat, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
+
 
   color: #242424;
   background-color: rgba(255, 255, 255, 0.87);
@@ -22,6 +23,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+}
+
+body{
+  padding: 25px;
 }
 
 .gallery{
@@ -38,3 +44,43 @@
   align-items: center;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.smbt-btn {
+
+  background-color: #4e75ff;
+  border-radius: 8px;
+    padding: 8px 16px;
+    width: 95px;
+    height: 40px;
+    border: 0;
+
+    margin-top: 8px;
+   
+
+}
+
+.text-btn{
+font-family: "Montserrat", sans-serif;
+font-weight: 500;
+ color: #fff;
+}
+
+textarea,
+input {
+  width: 360px;
+  border: solid 1.5px #808080;
+  border-radius: 4px;
+}
+
+.textarea-name{
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.04em;
+    color: #2e2f42;
+}
