@@ -3,8 +3,10 @@ const localStorageKey = "feedback-form-state";
 
 const data = JSON.parse(localStorage.getItem(localStorageKey)) ?? {};
 
-form.elements.email.value = data.email.trim() ?? "";
-form.elements.message.value = data.message.trim() ?? "";
+
+form.elements.email.value = data.email ? data.email.trim() : "";
+form.elements.message.value = data.message ? data.message.trim() : "";
+
 
 
 form.addEventListener("input", handleInput);
@@ -22,7 +24,10 @@ form.addEventListener("submit", handleSubmit);
 function handleSubmit(event) {
     
     event.preventDefault();
-    if (!(event.currentTarget.elements.message.value && event.currentTarget.elements.email.value)) {
+    const messageField = event.currentTarget.elements.message.value.trim();
+    const emailField = event.currentTarget.elements.email.value.trim();
+
+    if (!(messageField && emailField)) {
         alert("Fill all fields!")
         return
      
