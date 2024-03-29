@@ -1,17 +1,17 @@
 const form = document.querySelector("form");
 const localStorageKey = "feedback-form-state";
 
-let data = JSON.parse(localStorage.getItem(localStorageKey)) ?? {};
+const data = JSON.parse(localStorage.getItem(localStorageKey)) ?? {};
 
-form.elements.email.value = data.email ?? "";
-form.elements.message.value = data.message ?? "";
+form.elements.email.value = data.email.trim() ?? "";
+form.elements.message.value = data.message.trim() ?? "";
 
 
 form.addEventListener("input", handleInput);
 function handleInput(event) {
 
-    data.email = `${event.currentTarget.elements.email.value.trim()}`;
-    data.message = `${event.currentTarget.elements.message.value.trim()}`;
+    data.email = event.currentTarget.elements.email.value.trim();
+    data.message = event.currentTarget.elements.message.value.trim();
     localStorage.setItem(localStorageKey, JSON.stringify(data));
    
 }
